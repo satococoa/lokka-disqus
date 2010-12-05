@@ -1,0 +1,12 @@
+- content_for :head_last do
+  %link{:rel => 'stylesheet', :href => '/plugin/lokka-disqus/views/style.css', :type => 'text/css'}
+%h2 Disqus
+%form{:action => '/admin/plugins/disqus', :method => 'post'}
+  %input{:type => 'hidden', :name => '_method', :value => 'put'}
+  .field
+    %label{:for => 'disqus_shortname'} Disqus shortname
+    %br
+    %input{:type => 'text', :id => 'disqus_shortname', :name => 'disqus_shortname',
+          :value => Option.disqus_shortname}
+  .field
+    %input{:type => 'submit', :value => t.edit}
