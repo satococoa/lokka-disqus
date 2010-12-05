@@ -13,7 +13,7 @@ module Lokka
 
       app.before do
         shortname = Option.disqus_shortname
-        if !shortname.empty?
+        if !shortname.nil? && !shortname.empty?
           dev_mode = ENV['RACK_ENV'] == 'production' ? 0 : 1;
 
           Lokka::Helpers.send :define_method, :comment_form do
