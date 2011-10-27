@@ -35,9 +35,11 @@ module Lokka
       (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
   }());
 </script>
-  JS
-          content_for :footer do
-            disqus_count_script unless entry?
+          JS
+          unless entry?
+            content_for :footer do
+              disqus_count_script
+            end
           end
         end
       end
